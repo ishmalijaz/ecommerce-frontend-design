@@ -1,0 +1,126 @@
+.product-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-section {
+  border-radius: 8px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 20px;
+  align-items: center;
+}
+
+.home-outdoor {
+  background: linear-gradient(135deg, #f5f3e7 0%, #e8e2d0 100%);
+}
+
+.consumer-electronics {
+  background: linear-gradient(135deg, #e8d5f2 0%, #d4b5e8 100%);
+}
+
+.section-content {
+  flex: 1;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.source-btn {
+  background: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.source-btn:hover {
+  background: #007bff;
+  color: white;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.product-image {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.product-image img {
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.product-info h3 {
+  font-size: 12px;
+  margin: 0 0 2px 0;
+  color: #333;
+  font-weight: 500;
+}
+
+.product-info p {
+  font-size: 11px;
+  color: #666;
+  margin: 0;
+}
+
+.section-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-decoration img {
+  max-width: 120px;
+  height: auto;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .product-section {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-decoration {
+    display: none;
+  }
+}
