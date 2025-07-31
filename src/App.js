@@ -29,7 +29,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 import Home from "./pages/Home/Home"
-import Produclist from "./pages/ProductList/ProductList"
+import ProductList from "./pages/ProductList/ProductList"
 import ProductDetail from "./pages/ProductDetail/ProductDetail"
 import Cart from "./pages/Cart/Cart"
 import "./App.css"
@@ -43,7 +43,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<ProductList />} />
-            <Route path="/products/:category" element={<Productlist />} />
+            <Route path="/products/:category" element={<ProductList />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>

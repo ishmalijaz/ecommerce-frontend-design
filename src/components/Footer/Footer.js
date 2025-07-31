@@ -1,15 +1,51 @@
 import "./Footer.css"
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Youtube,
+} from "lucide-react";
+import image1 from '../../images/image1.png';
+import americaFlag from '../../images/americaFlag.png'
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
+          {/* Brand Section */}
+          <div className="footer-brand">
+            <div className="brand-logo">
+              <img src={image1} alt="Brand Logo" className="logo-image" />
+              <span className="logo-text">Brand</span>
+            </div>
+            <p className="brand-description">Best information about the company gies here but now lorem ipsum is</p>
+            <div className="social-links flex gap-4">
+              <a href="#" className="social-link facebook">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="social-link twitter">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="social-link linkedin">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="#" className="social-link instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="social-link youtube">
+                <Youtube className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* About Section */}
           <div className="footer-section">
             <h3>About</h3>
             <ul>
               <li>
-                <a href="/about">About Us</a>
+                <a href="/about-us">About Us</a>
               </li>
               <li>
                 <a href="/find-store">Find store</a>
@@ -23,11 +59,12 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Partnership Section */}
           <div className="footer-section">
             <h3>Partnership</h3>
             <ul>
               <li>
-                <a href="/about-us">About us</a>
+                <a href="/about-us">About Us</a>
               </li>
               <li>
                 <a href="/find-store">Find store</a>
@@ -41,24 +78,26 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Information Section */}
           <div className="footer-section">
             <h3>Information</h3>
             <ul>
               <li>
-                <a href="/help">Help center</a>
+                <a href="/help-center">Help Center</a>
               </li>
               <li>
-                <a href="/money-refund">Money refund</a>
+                <a href="/money-refund">Money Refund</a>
               </li>
               <li>
-                <a href="/shipping">Shipping info</a>
+                <a href="/shipping">Shipping</a>
               </li>
               <li>
-                <a href="/refunds">Refunds</a>
+                <a href="/contact-us">Contact us</a>
               </li>
             </ul>
           </div>
 
+          {/* For Users Section */}
           <div className="footer-section">
             <h3>For users</h3>
             <ul>
@@ -72,55 +111,42 @@ const Footer = () => {
                 <a href="/settings">Settings</a>
               </li>
               <li>
-                <a href="/orders">My Orders</a>
+                <a href="/my-orders">My Orders</a>
               </li>
             </ul>
           </div>
 
-          <div className="footer-section">
+          {/* Get App Section */}
+          <div className="footer-section get-app">
             <h3>Get app</h3>
-            <div className="app-downloads">
-              <a href="#" className="app-store-btn">
-                <img src="/placeholder.svg?height=40&width=120" alt="Download on App Store" />
+            <div className="app-buttons">
+              <a href="#" className="store-button">
+                <img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="Download on the App Store"
+                  className="store-img"
+                />
               </a>
-              <a href="#" className="google-play-btn">
-                <img src="/placeholder.svg?height=40&width=120" alt="Get it on Google Play" />
+              <a href="#" className="store-button">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Get it on Google Play"
+                  className="store-img"
+                />
               </a>
             </div>
           </div>
         </div>
 
+        {/* Footer Bottom */}
         <div className="footer-bottom">
-          <div className="footer-logo">
-            <span className="logo-text">Brand</span>
-            <p>Best information about the company goes here but now lorem ipsum is</p>
+          <div className="copyright">
+            <p>© 2023 Ecommerce.</p>
           </div>
-
-          <div className="footer-social">
-            <a href="#" className="social-link">
-              Facebook
-            </a>
-            <a href="#" className="social-link">
-              Twitter
-            </a>
-            <a href="#" className="social-link">
-              LinkedIn
-            </a>
-            <a href="#" className="social-link">
-              Instagram
-            </a>
-            <a href="#" className="social-link">
-              YouTube
-            </a>
-          </div>
-        </div>
-
-        <div className="footer-copyright">
-          <p>© 2023 Ecommerce. All rights reserved.</p>
-          <div className="footer-links">
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/cookies">Cookie Policy</a>
+          <div className="language-selector">
+            <img src={americaFlag} alt="US Flag" className="flag-image" />
+            <span className="language">English</span>
+            <span className="dropdown-arrow">▼</span>
           </div>
         </div>
       </div>

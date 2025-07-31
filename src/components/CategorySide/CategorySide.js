@@ -3,15 +3,15 @@ import "./CategorySide.css"
 
 const CategorySidebar = () => {
   const categories = [
-    { name: "Automobiles", color: "#ff6b6b" },
-    { name: "Clothes and wear", color: "#4ecdc4" },
-    { name: "Home interiors", color: "#45b7d1" },
-    { name: "Computer and tech", color: "#f9ca24" },
-    { name: "Tools, equipments", color: "#6c5ce7" },
-    { name: "Sports and outdoor", color: "#a29bfe" },
-    { name: "Animal and pets", color: "#fd79a8" },
-    { name: "Machinery tools", color: "#00b894" },
-    { name: "More category", color: "#636e72" },
+    { name: "Automobiles", color: "#dc3545" },
+    { name: "Clothes and wear", color: "#17a2b8" },
+    { name: "Home interiors", color: "#28a745" },
+    { name: "Computer and tech", color: "#ffc107" },
+    { name: "Tools, equipments", color: "#6f42c1" },
+    { name: "Sports and outdoor", color: "#fd7e14" },
+    { name: "Animal and pets", color: "#e83e8c" },
+    { name: "Machinery tools", color: "#20c997" },
+    { name: "More category", color: "#6c757d" },
   ]
 
   return (

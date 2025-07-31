@@ -1,6 +1,7 @@
 .home-page {
   padding: 20px 0;
   background-color: #f5f5f5;
+  min-height: calc(100vh - 160px); /* Account for header and footer */
 }
 
 .home-layout {
@@ -8,6 +9,7 @@
   grid-template-columns: 250px 1fr;
   gap: 20px;
   margin-bottom: 40px;
+  align-items: start;
 }
 
 .sidebar {
@@ -15,20 +17,56 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: fit-content;
+  position: sticky;
+  top: 160px; /* Stick below the fixed header with some extra space */
 }
 
 .main-content-area {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-height: 600px;
+}
+
+/* Ensure proper spacing for full-width sections */
+.home-page .recommended-section,
+.home-page .services-section,
+.home-page .region-section,
+.home-page .newsletter-section {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @media (max-width: 768px) {
   .home-layout {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .sidebar {
     order: 2;
+    position: static;
+  }
+
+  .main-content {
+    padding-top: 160px; /* More padding for mobile */
+  }
+
+  .home-page .recommended-section,
+  .home-page .services-section,
+  .home-page .region-section,
+  .home-page .newsletter-section {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 180px; /* Even more padding for small screens */
   }
 }

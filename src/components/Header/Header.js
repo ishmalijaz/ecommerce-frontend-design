@@ -3,6 +3,14 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import "./Header.css"
+import logoimage from "../../images/image1.png"
+import germnayflag from "../../images/germanyFlag.png"
+import {
+  UserIcon,
+  ChatBubbleLeftEllipsisIcon,
+  HeartIcon,
+  ShoppingCartIcon,
+} from '@heroicons/react/24/solid';
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("")
@@ -25,11 +33,19 @@ const Header = () => {
           <div className="header-content">
             {/* Logo */}
             <Link to="/" className="logo">
+              <img src={logoimage} alt="Brand Logo" className="logo-image" />
               <span className="logo-text">Brand</span>
             </Link>
 
             {/* Search Bar */}
             <form className="search-form" onSubmit={handleSearch}>
+              <input
+                type="text"
+                placeholder="Search"
+                className="search-input"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
               <select
                 className="category-select"
                 value={selectedCategory}
@@ -41,13 +57,6 @@ const Header = () => {
                   </option>
                 ))}
               </select>
-              <input
-                type="text"
-                placeholder="Search"
-                className="search-input"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
               <button type="submit" className="search-btn">
                 Search
               </button>
@@ -55,22 +64,25 @@ const Header = () => {
 
             {/* User Actions */}
             <div className="user-actions">
-              <div className="language-currency">
-                <select className="language-select">
-                  <option>English | USD</option>
-                  <option>Spanish | EUR</option>
-                </select>
-              </div>
-              <div className="user-menu">
-                <Link to="/account" className="user-link">
-                  <i className="icon-user"></i>
+              <div className="user-icons">
+                <Link to="/profile" className="user-icon" title="Profile">
+                  <UserIcon />
+                  <span>Profile</span>
                 </Link>
-                <Link to="/favorites" className="user-link">
-                  <i className="icon-heart"></i>
+
+                <Link to="/messages" className="user-icon" title="Message">
+                  <ChatBubbleLeftEllipsisIcon />
+                  <span>Message</span>
                 </Link>
-                <Link to="/cart" className="user-link cart-link">
-                  <i className="icon-cart"></i>
-                  <span className="cart-count">0</span>
+
+                <Link to="/orders" className="user-icon" title="Orders">
+                  <HeartIcon />
+                  <span>Orders</span>
+                </Link>
+
+                <Link to="/cart" className="user-icon" title="My cart">
+                  <ShoppingCartIcon />
+                  <span>My cart</span>
                 </Link>
               </div>
             </div>
@@ -82,31 +94,42 @@ const Header = () => {
       <nav className="main-nav">
         <div className="container">
           <div className="nav-content">
-            <div className="nav-categories">
+            <div className="nav-left">
               <button className="categories-btn">
                 <span className="hamburger-icon">☰</span>
                 All category
               </button>
+              <ul className="nav-links">
+                <li>
+                  <Link to="/products/hot-offers">Hot offers</Link>
+                </li>
+                <li>
+                  <Link to="/products/gift-boxes">Gift boxes</Link>
+                </li>
+                <li>
+                  <Link to="/products">Projects</Link>
+                </li>
+                <li>
+                  <Link to="/menu">Menu item</Link>
+                </li>
+                <li className="nav-dropdown">
+                  <Link to="/help">Help ▼</Link>
+                </li>
+              </ul>
             </div>
-            <ul className="nav-links">
-              <li>
-                <Link to="/products/hot-offers">Hot offers</Link>
-              </li>
-              <li>
-                <Link to="/products/gift-boxes">Gift boxes</Link>
-              </li>
-              <li>
-                <Link to="/products">Projects</Link>
-              </li>
-              <li>
-                <Link to="/menu">Menu item</Link>
-              </li>
-              <li>
-                <Link to="/help">Help</Link>
-              </li>
-            </ul>
+
             <div className="nav-right">
-              <span>Ship to 🇮🇳</span>
+              <div className="language-currency">
+                <select className="language-select">
+                  <option>English, USD </option>
+                  <option>Spanish, EUR</option>
+                </select>
+              </div>
+              <div className="ship-to">
+                <span>Ship to</span>
+                <img src={germnayflag} alt="Germany Flag" className="country-flag" />
+                <span>▼</span>
+              </div>
             </div>
           </div>
         </div>
