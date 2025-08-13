@@ -1,19 +1,28 @@
+/* ===== FULL WIDTH FOOTER ===== */
 .footer {
   background: #ffffff;
   border-top: 1px solid #e9ecef;
-  padding: 40px 0 0;
+  width: 100%;
   margin-top: 60px;
+  padding: 0;
+}
+
+.footer-container {
+  width: 100%;
+  padding: 40px 0 0;
 }
 
 .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1.5fr;
   gap: 40px;
-  padding-bottom: 40px;
   border-bottom: 1px solid #e9ecef;
 }
 
-/* Brand Section */
+/* ===== BRAND SECTION ===== */
 .footer-brand {
   max-width: 280px;
 }
@@ -25,11 +34,16 @@
   margin-bottom: 15px;
 }
 
-.logo-image {
+.logo-icon {
   width: 40px;
   height: 40px;
+  background: #007bff;
   border-radius: 8px;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
   box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
 }
 
@@ -62,7 +76,6 @@
   justify-content: center;
   text-decoration: none;
   color: #6c757d;
-  font-size: 14px;
   transition: all 0.3s ease;
 }
 
@@ -72,17 +85,12 @@
   transform: translateY(-2px);
 }
 
-.social-link.facebook span {
-  font-weight: bold;
-  font-family: serif;
+.social-icon {
+  width: 16px;
+  height: 16px;
 }
 
-.social-link.linkedin span {
-  font-weight: bold;
-  font-size: 12px;
-}
-
-/* Footer Sections */
+/* ===== FOOTER SECTIONS ===== */
 .footer-section h3 {
   font-size: 16px;
   font-weight: 600;
@@ -111,82 +119,43 @@
   color: #007bff;
 }
 
-/* Get App Section */
-.get-app {
-  font-family: sans-serif;
-}
-
-.app-buttons {
+/* ===== GET APP SECTION ===== */
+.get-app .app-buttons {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 12px;
 }
 
+.store-button {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.store-button:hover {
+  transform: translateY(-2px);
+}
+
 .store-img {
-  height: 38px;
+  height: 40px;
   width: auto;
   display: block;
 }
 
-.get-app .app-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.app-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #212529;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  min-width: 140px;
-}
-
-.app-button:hover {
-  background: #000;
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.app-icon {
-  font-size: 20px;
-  width: 24px;
-  text-align: center;
-}
-
-.app-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.download-text {
-  font-size: 10px;
-  opacity: 0.8;
-}
-
-.store-name {
-  font-size: 13px;
-  font-weight: 500;
-}
-
-/* Footer Bottom */
+/* ===== FOOTER BOTTOM - FULL WIDTH ===== */
 .footer-bottom {
+  background: #e9ecef;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.footer-bottom-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  background: #e9ecef;
-  margin: 0 -20px -20px -20px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .copyright p {
@@ -229,7 +198,7 @@
   margin-left: 2px;
 }
 
-/* Responsive Design */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1024px) {
   .footer-content {
     grid-template-columns: 1fr 1fr 1fr;
@@ -247,6 +216,11 @@
   .footer-content {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
+    padding: 0 15px 40px;
+  }
+
+  .footer-bottom-content {
+    padding: 0 15px;
   }
 
   .footer-brand {
@@ -260,6 +234,7 @@
   .app-buttons {
     flex-direction: row !important;
     justify-content: flex-start;
+    gap: 15px;
   }
 }
 
@@ -269,7 +244,7 @@
     gap: 20px;
   }
 
-  .footer-bottom {
+  .footer-bottom-content {
     flex-direction: column;
     gap: 15px;
     text-align: center;
@@ -277,12 +252,18 @@
 
   .app-buttons {
     flex-direction: column !important;
+    gap: 12px;
   }
 }
 
-/* Container adjustment for footer */
-.footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* ===== ENSURE NO CONTAINER CONSTRAINTS ===== */
+.footer * {
+  box-sizing: border-box;
+}
+
+/* Remove any potential container constraints from parent elements */
+.App .footer {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
 }

@@ -1,18 +1,11 @@
 import "./Footer.css"
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Youtube,
-} from "lucide-react";
-import image1 from '../../images/image1.png';
-import americaFlag from '../../images/americaFlag.png'
+import { Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react"
+import image1 from "../../images/image1.png"
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="footer-container">
         <div className="footer-content">
           {/* Brand Section */}
           <div className="footer-brand">
@@ -21,21 +14,21 @@ const Footer = () => {
               <span className="logo-text">Brand</span>
             </div>
             <p className="brand-description">Best information about the company gies here but now lorem ipsum is</p>
-            <div className="social-links flex gap-4">
+            <div className="social-links">
               <a href="#" className="social-link facebook">
-                <Facebook className="w-5 h-5" />
+                <Facebook className="social-icon" />
               </a>
               <a href="#" className="social-link twitter">
-                <Twitter className="w-5 h-5" />
+                <Twitter className="social-icon" />
               </a>
               <a href="#" className="social-link linkedin">
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="social-icon" />
               </a>
               <a href="#" className="social-link instagram">
-                <Instagram className="w-5 h-5" />
+                <Instagram className="social-icon" />
               </a>
               <a href="#" className="social-link youtube">
-                <Youtube className="w-5 h-5" />
+                <Youtube className="social-icon" />
               </a>
             </div>
           </div>
@@ -140,13 +133,15 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <div className="copyright">
-            <p>© 2023 Ecommerce.</p>
-          </div>
-          <div className="language-selector">
-            <img src={americaFlag} alt="US Flag" className="flag-image" />
-            <span className="language">English</span>
-            <span className="dropdown-arrow">▼</span>
+          <div className="footer-bottom-content">
+            <div className="copyright">
+              <p>© 2023 Ecommerce.</p>
+            </div>
+            <div className="language-selector">
+              <img src="/placeholder.svg?height=16&width=24" alt="US Flag" className="flag-image" />
+              <span className="language">English</span>
+              <span className="dropdown-arrow">▼</span>
+            </div>
           </div>
         </div>
       </div>
